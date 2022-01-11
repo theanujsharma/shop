@@ -1,11 +1,7 @@
-import display, order
-
+import display, order, database
 print('Welcome to the shop')
-
-menu = {"Pizza": 100, "Burger": 200, "Cookies": 300}
-
+menu = database.food
 #prinitng menu 
 display.print_list(menu)  # calling the function
-
 #taking order
 order.take_order(menu)

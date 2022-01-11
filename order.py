@@ -13,8 +13,9 @@ def take_order(menu):
 
         #when the user says q we are going to print the bill
         elif order == "q":
+            name = input("Enter your name: - ")
             print("Thanks for visiting")
-            print(f"You have  bought these items:-")
+            print(f"You have bought these items:-")
             #prining the order cart
             for item in order_cart:
                 print(item)
@@ -22,5 +23,8 @@ def take_order(menu):
             for price in order_price:
                 bill = bill + price
             print(f'Your order total is {bill}')
+            mybill = open('sales.txt', 'w')
+            mybill.write(
+                f"{name}, you bought {order_cart} and your total bill is ${bill}")
         else:
             print("Sorry, Its not available")
